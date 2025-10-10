@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { ClickEvent } from 'devextreme/ui/button';
+import notify from 'devextreme/ui/notify';
+import { DxDropDownButtonTypes } from 'devextreme-angular/ui/drop-down-button';
+import { ActionItem, DropDownOptions } from './app.types';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +9,22 @@ import { ClickEvent } from 'devextreme/ui/button';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Angular';
+  actions: ActionItem[] = [
+    { id: 1, text: 'My profile', icon: 'user' },
+    { id: 2, text: 'Messages', icon: 'email' },
+    { id: 3, text: 'Contacts', icon: 'group' },
+    { id: 4, text: 'Log out', icon: 'runner' },
+  ];
 
-  counter = 0;
+  dropDownOptions: DropDownOptions = {
+    height: 150,
+  };
 
-  buttonText = 'Click count: 0';
+  onItemClick(e: DxDropDownButtonTypes.ItemClickEvent): void {
+    notify(`${e.itemData.text} was clicked`, 'info', 2000);
+  }
 
-  onClick(e: ClickEvent): void {
-    this.counter++;
-    this.buttonText = `Click count: ${this.counter}`;
+  onButtonClick(): void {
+    notify('Main button was clicked', 'success', 2000);
   }
 }

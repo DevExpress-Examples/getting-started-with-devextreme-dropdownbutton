@@ -1,16 +1,43 @@
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 import './App.css';
 import 'devextreme/dist/css/dx.material.blue.light.compact.css';
-import Button from 'devextreme-react/button';
+import DropDownButton from 'devextreme-react/drop-down-button';
+import type { DropDownButtonTypes } from 'devextreme-react/drop-down-button';
+import notify from 'devextreme/ui/notify';
+
+const actions = [
+  { id: 1, text: 'My profile', icon: 'user' },
+  { id: 2, text: 'Messages', icon: 'email' },
+  { id: 3, text: 'Contacts', icon: 'group' },
+  { id: 4, text: 'Log out', icon: 'runner' },
+];
+
+const dropDownOptions = {
+  height: 150,
+};
 
 function App(): JSX.Element {
-  var [count, setCount] = useState<number>(0);
-  const clickHandler = useCallback(() => {
-    setCount((prev) => prev + 1);
-  }, [setCount]);
+  const onItemClick = useCallback((e: DropDownButtonTypes.ItemClickEvent) => {
+    notify(`${e.itemData.text} was clicked`, 'info', 2000);
+  }, []);
+
+  const onButtonClick = useCallback(() => {
+    notify('Main button was clicked', 'success', 2000);
+  }, []);
+
   return (
-    <div className="main">
-      <Button text={`Click count: ${count}`} onClick={clickHandler} />
+    <div id="app-container">
+      <DropDownButton
+        text="Sandra Johnson"
+        icon="user"
+        items={actions}
+        keyExpr="id"
+        displayExpr="text"
+        onItemClick={onItemClick}
+        splitButton={true}
+        onButtonClick={onButtonClick}
+        dropDownOptions={dropDownOptions}
+      />
     </div>
   );
 }

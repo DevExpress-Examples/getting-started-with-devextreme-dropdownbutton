@@ -1,3 +1,14 @@
-<div class="default-style">
-  <dx-button [text]="buttonText" (onClick)="onClick($event)"></dx-button>
+<div id="app-container">
+  <dx-drop-down-button
+    text="Sandra Johnson"
+    icon="user"
+    [items]="actions"
+    keyExpr="id"
+    displayExpr="text"
+    (onItemClick)="onItemClick($event)"
+    [splitButton]="true"
+    (onButtonClick)="onButtonClick()"
+    [dropDownOptions]="dropDownOptions"
+  >
+  </dx-drop-down-button>
 </div>

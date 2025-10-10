@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import HomeContent from '../components/HomeContent.vue';
+import DropDownButtonContent from '../components/DropDownButtonContent.vue';
 </script>
 
 <template>
-  <HomeContent text="Count"/>
+  <DropDownButtonContent/>
 </template>
 

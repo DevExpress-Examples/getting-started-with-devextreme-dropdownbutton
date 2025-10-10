@@ -8,19 +8,21 @@
 
 This repository stores code examples of the DropDownButton component for the [Getting Started with DropDownButton](https://js.devexpress.com/Documentation/Guide/UI_Components/DropDownButton/Getting_Started_with_DropDownButton/) tutorial. The DropDownButton combines the functionality of a button and a drop-down menu. This tutorial describes how to configure a DropDownButton that logs user clicks in the browser console.
 
-<div align="center"><img src="./dropdownbutton.png" /></div>
+<div align="center"><img src="./images/dropdownbutton.png" /></div>
 
 ## Files to Review
 
 - **Angular**
-    - [app.component.html](angular/src/app/app.component.html)
-    - [app.component.ts](angular/src/app/app.component.ts)
+    - [app.component.html](Angular/src/app/app.component.html)
+    - [app.component.ts](Angular/src/app/app.component.ts)
 - **jQuery**
-    - [index.js](jquery/src/index.js)
+    - [index.js](jQuery/src/index.js)
+    - [index.html](jQuery/src/index.html)
 - **React**
-    - [App.js](react/src/App.js)
+    - [App.tsx](React/src/App.tsx)
 - **Vue**
-    - [App.vue](vue/src/App.vue)
+    - [App.vue](Vue/src/App.vue)
+    - [DropDownButtonContent.vue](Vue/src/components/DropDownButtonContent.vue)
 
 ## Documentation
 
