@@ -3,11 +3,13 @@ import notify from 'devextreme/ui/notify';
 import { DxDropDownButtonTypes } from 'devextreme-angular/ui/drop-down-button';
 import { ActionItem, DropDownOptions } from './app.types';
 
+import { DxDropDownButtonModule } from 'devextreme-angular/ui/drop-down-button';
+
 @Component({
     selector: 'app-root',
+    imports: [DxDropDownButtonModule],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    standalone: false
 })
 export class AppComponent {
   actions: ActionItem[] = [
